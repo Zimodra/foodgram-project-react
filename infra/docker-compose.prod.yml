@@ -27,15 +27,14 @@ services:
     image: zimodra/backend_foodgram:latest
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - ../.env:/usr/src/app/backend/envfiles/.env.prod
       - ../data:/usr/src/app/data
       - static_value:/usr/src/app/backend/static_django/
       - media_value:/usr/src/app/backend/media/
     env_file:
-      - ../.env 
+      - ../.env
     depends_on:
       - db
-    networks: 
+    networks:
       - foodgram_network
 
 networks:
