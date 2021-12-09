@@ -19,7 +19,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ../backend/envfiles/.env.prod
+      - ../.env
     networks: 
       - foodgram_network
 

@@ -105,7 +105,7 @@ jobs:
             echo "DJANGO_SU_PASSWORD=${{ secrets.DJANGO_SU_PASSWORD }}" >> .env
             echo "DJANGO_SU_FIRST_NAME=${{ secrets.DJANGO_SU_FIRST_NAME }}" >> .env
             echo "DJANGO_SU_LAST_NAME=${{ secrets.DJANGO_SU_LAST_NAME }}" >> .env
-            cd infra            
+            cd infra
             sudo docker-compose -f docker-compose.prod.yml stop
             sudo docker-compose -f docker-compose.prod.yml rm -f
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/backend_foodgram
