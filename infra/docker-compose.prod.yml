@@ -19,7 +19,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ../backend/envfiles/.env
+      - .env
     networks: 
       - foodgram_network
 
@@ -32,7 +32,7 @@ services:
       - static_value:/usr/src/app/backend/static_django/
       - media_value:/usr/src/app/backend/media/
     env_file:
-      - ../backend/envfiles/.env
+      - .env
     depends_on:
       - db
     networks: 
