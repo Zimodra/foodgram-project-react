@@ -32,7 +32,7 @@ services:
       - static_value:/usr/src/app/backend/static_django/
       - media_value:/usr/src/app/backend/media/
     env_file:
-      - ../.env
+      - ../.env 
     depends_on:
       - db
     networks: 
