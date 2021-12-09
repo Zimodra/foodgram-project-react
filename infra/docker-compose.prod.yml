@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   nginx:
-    image: ipodjke/frontend_foodgram:latest
+    image: zimodra/frontend_foodgram:latest
     ports:
       - 80:80
     volumes:
@@ -19,12 +19,12 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ../backend/envfiles/.env.prod
+      - ../backend/envfiles/.env
     networks: 
       - foodgram_network
 
   backend:
-    image: ipodjke/backend_foodgram:latest
+    image: zimodra/backend_foodgram:latest
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ../.env:/usr/src/app/backend/envfiles/.env.prod
@@ -32,7 +32,7 @@ services:
       - static_value:/usr/src/app/backend/static_django/
       - media_value:/usr/src/app/backend/media/
     env_file:
-      - ../backend/envfiles/.env.prod
+      - ../backend/envfiles/.env
     depends_on:
       - db
     networks: 
