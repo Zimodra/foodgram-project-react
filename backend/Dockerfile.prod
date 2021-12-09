@@ -16,6 +16,8 @@ RUN pip install --upgrade pip && \
 
 COPY . .
 
+RUN chmod 777 docker-entrypoint.prod.sh
+
 RUN pipenv install --system --deploy
 
 ENTRYPOINT ["/usr/src/app/backend/docker-entrypoint.prod.sh"]
